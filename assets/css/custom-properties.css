@@ -1,0 +1,42 @@
+:root {
+  --font-weight-bold: 700;
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+
+  --clr-card-brd: hsl(60, 26%, 90%);
+  --clr-card-attacks: hsl(60, 26%, 82%, 0.3);
+
+  --element-icon-brd: hsl(60, 26%, 82%);
+  --element-icon-highlight: hsla(0, 0%, 100%, 0.7);
+  --element-icon-shad: hsl(0, 0%, 0%, 0.9);
+
+  --clr-font-d: hsl(0, 0%, 5%);
+  --clr-font-l: hsl(0, 0%, 89%);
+  --weight-main: var(--font-weight-bold);
+  --weight-default: var(--font-weight-normal);
+  /*====================================================*/
+  /*            Color Themes elments                    */
+  /*====================================================*/
+
+  /*--Feuer--*/
+  --element-icon: #d00000;
+  --element-dark: hsl(354, 93%, 22%);
+  --element-middle: hsl(358, 97%, 31%);
+  --element-light: hsl(23, 97%, 46%);
+  --element-lightest: hsl(34, 95%, 49%);
+  --element-accent-clr: hsl(43, 100%, 52%);
+  /*--Pflanze--*/
+  --element-icon: #38b000;
+  --element-dark: #006400;
+  --element-middle: #006400;
+  --element-light: #007200;
+  --element-lightest: #38b000;
+  --element-accent-clr: #70e000;
+  /*--Wasser--*/
+  --element-icon: #d00000;
+  --element-dark: #023e8a;
+  --element-middle: #0077b6;
+  --element-light: #0096c7;
+  --element-lightest: #00b4d8;
+  --element-accent-clr: #90e0ef;
+}

@@ -1,0 +1,273 @@
+@import "/assets/css/reset.css";
+@import "/assets/css/custom-properties.css";
+@import "/assets/css/card/card-style.css";
+@import "/assets/css/card/icon-background.css";
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+.card__wrapper {
+  width: 20rem;
+  height: 28rem;
+
+  margin: 1rem;
+  cursor: pointer;
+}
+.card__frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 3px solid var(--clr-card-brd);
+  border-radius: 10px;
+
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+
+  transform-origin: center;
+  transform: rotateY(180deg);
+  perspective: 500px;
+}
+
+.card__wrapper:hover .card__frame {
+  transform: rotateY(180deg);
+}
+
+.card__frontside,
+.card__backside {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+.card__frontside {
+  transform: rotateY(180deg);
+  height: 100%;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 0.5rem;
+  grid-template-rows: 10% 1fr 1fr 10% 5%;
+  justify-content: flex-start;
+}
+
+.card__backside {
+  backface-visibility: hidden;
+}
+.card__backside img {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+.card-header__element-icon svg {
+  width: 2rem;
+  height: 2rem;
+}
+/*======================================================*/
+/*                Card Header                           */
+/*======================================================*/
+.card-front__header {
+  width: 100;
+  /* margin-inline: auto; */
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.card-front__header h3 {
+  width: 70%;
+  font-size: 1.3rem;
+  padding-left: 0.8rem;
+  height: auto;
+}
+.card-header__lifepoints {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  background: var(--clr-card-brd);
+  border-radius: 0 3px 0 0;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 40% 100%, 25% 30%, 8% 30%);
+  padding-block: 0.3rem;
+  padding-right: 0.5rem;
+  width: 100%;
+}
+.card-header__lifepoints p {
+  font-size: 1.2rem;
+  color: var(--clr-font-d);
+  font-weight: var(--weight-main);
+}
+.card-header__lifepoints p:first-of-type {
+  font-size: 0.8rem;
+
+  height: 100%;
+  margin-top: 0.3rem;
+}
+
+.card-front__header {
+  justify-content: space-between;
+}
+
+.card-front__header figure svg {
+  width: 25px;
+  height: 25px;
+}
+/*======================================================*/
+/*               Bild                          */
+/*======================================================*/
+.card-front__pokemon-pic {
+  height: 80%;
+  width: 97%;
+  margin-left: auto;
+  background: var(--clr-card-brd);
+  padding: 0.1rem 0 0.1rem 0.1rem;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 8% 100%, 0% 78%, 0 0);
+}
+.card-front__poke-img-wrapper {
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 8% 100%, 0% 78%, 0 0);
+}
+.card-front__poke-img-wrapper img {
+  object-fit: cover;
+
+  width: 100%;
+  height: 100%;
+}
+
+/*======================================================*/
+/*               Fähigkeiten                          */
+/*======================================================*/
+.card-front__attacks {
+  width: 95%;
+  margin-inline: auto;
+  height: max-content;
+  padding: 0.5rem;
+}
+.card-front__attacks table {
+  border-collapse: collapse;
+  height: max-content;
+  color: var(--clr-font-d);
+  font-weight: var(--font-weight-bold);
+}
+.card-front__attacks table tr {
+  height: 100%;
+  width: 100%;
+  border-bottom: 1px solid black;
+}
+.card-front__attacks table tr td {
+  padding-block: 0.5rem;
+}
+.card-front__attacks table tr:last-of-type {
+  border-bottom: 1px solid transparent;
+}
+
+table svg {
+  width: 17px;
+  height: 17px;
+}
+.attacks__icons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.2rem;
+  align-content: center;
+  height: 100%;
+}
+.attack__description {
+  text-align: left;
+  padding-left: 1rem;
+}
+.attack__damage {
+  text-align: end;
+}
+/*======================================================*/
+/*              Schwäche, Resitenzen                          */
+/*======================================================*/
+.card-front__extra-infos {
+  width: 100%;
+  align-self: flex-end;
+  display: flex;
+  gap: 1rem;
+  padding-block: 0.5rem;
+
+  /* background: white; */
+  font-size: 0.7rem;
+}
+.card-front__extra-infos svg {
+  width: 10px;
+  height: 10px;
+}
+
+.extra-infos__resistenz {
+  position: relative;
+
+  background: var(--clr-card-brd);
+  justify-content: flex-start;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 70%;
+  padding-block: 0.5rem;
+  padding-inline: 0.5rem;
+  clip-path: polygon(0 0, 100% 0, 100% 70%, 95% 100%, 0 100%);
+}
+
+.extra-infos__run {
+  background: var(--clr-card-brd);
+  justify-content: flex-star;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  padding-block: 0.5rem;
+  padding-left: 0.5rem;
+  width: 30%;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 100%, 0% 70%, 0 0);
+}
+.extra-infos__run li,
+.extra-infos__resistenz li {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.extra-infos__heading {
+  padding-right: 0.5rem;
+  font-size: 0.6rem;
+  height: 100%;
+  color: var(--clr-font-d);
+  font-weight: var(--weight-main);
+}
+.extra-infos__icon-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+/*======================================================*/
+/*               Main infos                         */
+/*======================================================*/
+.card-front__main-info {
+  width: 95%;
+  margin-inline: auto;
+}
+.card-front__pokemon-infobox {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+.card-front__pokemon-infobox li {
+  display: inherit;
+  font-size: 0.7rem;
+  color: var(--clr-font-d);
+}
+.main-info__category {
+  margin-right: 0.3rem;
+  font-weight: var(--weight-main);
+  width: auto;
+}
+.infobox-content {
+  font-weight: var(--weight-default);
+  text-align: start;
+}

@@ -1,0 +1,48 @@
+.element-icon__wrapper,
+.element-icon__small-wrapper {
+  display: grid;
+  place-content: center;
+  width: auto;
+  height: auto;
+  padding: 0.2rem;
+  border-radius: 50%;
+}
+
+.element-icon__wrapper {
+  border: 2px solid white;
+}
+.element-icon__small-wrapper {
+  border: 1px solid var(--clr-card-brd);
+}
+
+.element-icon__style {
+  background: radial-gradient(
+      circle at 20% 20%,
+      var(--element-icon-highlight) 10%,
+      transparent 35%
+    ),
+    var(--element-icon);
+  box-shadow: inset 0 0 8px var(--element-icon-shad);
+}
+.element-icon__small {
+  background: radial-gradient(
+      circle at 20% 20%,
+      var(--element-icon-highlight) 10%,
+      transparent 35%
+    ),
+    var(--element-icon);
+  box-shadow: inset 0 0 8px var(--element-icon-shad);
+}
+
+.element-icon__xs svg {
+  width: 10px;
+  height: 10px;
+}
+.element-icon__xs {
+  background: radial-gradient(
+      circle at 20% 20%,
+      var(--element-icon-highlight) 10%,
+      transparent 35%
+    ),
+    var(--element-icon);
+}

@@ -1,0 +1,260 @@
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+:root {
+  --clr-field-bg: hsl(120, 2%, 25%);
+
+  --pokeball-dark: hsl(120, 2%, 5%);
+  --pokeball-top: hsl(0, 100%, 50%);
+  --pokeball-top-shd: hsl(0, 100%, 20%);
+  --pokeball-bottom: hsl(0, 0%, 91%);
+  --pokeball-bottom-shd: hsl(0, 0%, 41%);
+  --pokeball-inner: hsl(0, 4%, 81%);
+  --clr-cardfield: hsl(120, 2%, 30%);
+  --bg-player-two-d: hsl(217, 100%, 21%);
+  --bg-player-two-l: hsl(220, 97%, 40%);
+  --bg-player-one-d: hsl(0, 94%, 24%);
+  --bg-player-one-l: hsl(0, 100%, 40%);
+}
+html {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  width: 10%;
+  height: 100%;
+  background-color: red;
+}
+main {
+  width: 90%;
+  height: 100%;
+  background: var(--pokeball-dark);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* transform: rotateX(40deg); */
+}
+
+.table__background-wrapper {
+  background: var(--clr-field-bg);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 95%;
+  height: 100%;
+  border-left: 10px solid var(--clr-cardfield);
+  border-right: 10px solid var(--clr-cardfield);
+  box-shadow: inset 0 0 20px black;
+}
+.table__pokeball {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  display: block;
+  width: 18%;
+  aspect-ratio: 1;
+
+  border-radius: 100%;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  z-index: 15;
+  justify-content: center;
+  border: 10px solid var(--pokeball-dark);
+  outline: 10px solid var(--clr-field-bg);
+}
+.table__pokeball-bg {
+  width: 95%;
+  aspect-ratio: 1;
+
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.table__pokeball-top {
+  background-color: var(--pokeball-top);
+  box-shadow: inset 10px 10px 20px var(--pokeball-top-shd);
+  width: 100%;
+  border-radius: 200px 200px 0 0;
+  height: 50%;
+  align-self: flex-start;
+}
+.table__pokeball-bottom {
+  background-color: var(--pokeball-bottom);
+  width: 100%;
+  border-radius: 0 0 200px 200px;
+  height: 50%;
+  align-self: flex-end;
+  box-shadow: inset 10px 0px 20px var(--pokeball-bottom-shd);
+}
+
+.table__pokeball-middle {
+  width: 35%;
+  aspect-ratio: 1;
+  background: var(--pokeball-dark);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  border-radius: 100%;
+}
+.table__pokeball-middle-inner {
+  width: 70%;
+  aspect-ratio: 1;
+  background: var(--pokeball-inner);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  border-radius: 100%;
+}
+.table__pokeball-middle-inner::after {
+  content: "";
+
+  width: 60%;
+  aspect-ratio: 1;
+  background: var(--pokeball-inner);
+  box-shadow: 0 0 10px black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  border-radius: 100%;
+}
+
+.table__pokeball-middle:after,
+.table__pokeball-middle:before {
+  content: "";
+  display: block;
+  width: 95%;
+  height: 20px;
+  position: absolute;
+  top: 50%;
+  height: 20px;
+  translate: 0 -50%;
+  z-index: 20;
+  background: var(--pokeball-dark);
+}
+.table__pokeball-middle:after {
+  left: 98%;
+}
+.table__pokeball-middle:before {
+  left: -93%;
+}
+.table__player-one,
+.table__player-two {
+  width: 98%;
+  height: 49%;
+  background: green;
+  align-self: center;
+  position: relative;
+  padding: 1rem;
+}
+.table__player-one {
+  border-radius: 0 0 10px 10px;
+  background: linear-gradient(
+    135deg,
+    var(--bg-player-one-d),
+    var(--bg-player-one-l)
+  );
+}
+.table__player-two {
+  border-radius: 10px 10px 0 0;
+  background: linear-gradient(
+    45deg,
+    var(--bg-player-two-d),
+    var(--bg-player-two-l)
+  );
+}
+.table__player-layer-two {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  border-style: solid;
+  border-width: 1px;
+  margin-inline: auto;
+  border: 5px solid hsl(0, 0%, 100%, 0.3);
+  border-radius: 8px;
+}
+.table__player-one-cardfield,
+.table__player-two-cardfield {
+  width: 80%;
+  height: 65%;
+  background: var(--clr-cardfield);
+  margin-inline: auto;
+  position: absolute;
+  padding-inline: 0.5rem;
+}
+.table__player-two-cardfield {
+  top: 67.5%;
+  left: 50%;
+  translate: -50% -50%;
+  padding-top: 0.5rem;
+  clip-path: polygon(2% 0%, 98% 0%, 100% 8%, 100% 100%, 0 100%, 0 8%);
+}
+.table__player-two-cardfield .cardfield-inner {
+  clip-path: polygon(1.5% 0%, 98.5% 0%, 100% 6.5%, 100% 100%, 0 100%, 0 6.5%);
+}
+.table__player-one-cardfield .cardfield-inner {
+  clip-path: polygon(
+    0 0,
+    100% 0%,
+    100% 92.5%,
+    98.3% 100%,
+    1.8% 100%,
+    0 92.5%,
+    0 0
+  );
+}
+.table__player-one-cardfield {
+  top: 32.5%;
+  left: 50%;
+  translate: -50% -50%;
+  padding-bottom: 0.5rem;
+
+  clip-path: polygon(0 0, 100% 0%, 100% 92%, 98% 100%, 2% 100%, 0 92%, 0 0);
+}
+
+.cardfield-inner {
+  width: 100%;
+  height: 100%;
+  background: var(--clr-field-bg);
+  box-shadow: inset 0 0px 30px black;
+}
+.cardfield-grid {
+  width: 80%;
+  height: 100%;
+  margin-inline: auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 2rem;
+  padding-top: 1.5rem;
+}
+
+.card-placeholder {
+  display: block;
+  width: 100%;
+  height: 90%;
+
+  border-radius: 0.5rem;
+  border: 1px solid hsl(0, 0%, 100%, 0.2);
+  box-shadow: inset 0 0 10px black;
+}

@@ -24,7 +24,7 @@
   transform-style: preserve-3d;
 
   transform-origin: center;
-  transform: rotateY(180deg);
+  /* transform: rotateY(180deg); */
   perspective: 500px;
 }
 

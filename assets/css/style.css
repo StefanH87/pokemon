@@ -183,6 +183,9 @@ table svg {
 .attack__damage {
   text-align: end;
 }
+.attack-description {
+  font-size: 0.6rem;
+}
 /*======================================================*/
 /*              Schwäche, Resitenzen                          */
 /*======================================================*/
